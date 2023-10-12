@@ -2,4 +2,6 @@
 *.log
 #Ignore Folder and Files
 
+.png
 node_modules
+cypress/screenshots
