@@ -2,5 +2,6 @@
   "Username": "Admin",
   "Password":"admin123",
   "invalidUsername":"admin",
-  "invalidPassword":"121737"
+  "invalidPassword":"121737",
+  "claimRemark" : "The playful kitten chased its tail in endless circles, delighting in the simple joys of feline antics."
 }

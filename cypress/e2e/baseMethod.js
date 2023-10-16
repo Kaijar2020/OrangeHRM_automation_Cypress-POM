@@ -6,9 +6,10 @@ class baseMethod{
     inputPassword(locator,password){
         cy.xpath(locator).type(password)
     }
-    clickOnLoginButton(locator){
+    clickOnElement(locator){
         cy.xpath(locator).click()
     }
+
 
     //to get text from element and verify with actual text
     textVerify(locator,expectedtext){   
