@@ -11,6 +11,13 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add("login", (email, password) => { 
+
+    cy.get("[name='username']").type(email);
+    cy.get("[name='password']").type(password);
+    cy.get("[type='submit']").click();
+})
+
 //
 //
 // -- This is a child command --
@@ -23,3 +30,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//To view cy build commands as reference
+/// <reference types="Cypress" />
+//  require("cypress")
+
+//To add xpath as custom command
+require('cypress-xpath');
+
+//File Upload
+//require('cypress-file-upload')
+
+

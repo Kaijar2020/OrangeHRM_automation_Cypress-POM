@@ -12,7 +12,7 @@ class baseMethod{
 
 
     //to get text from element and verify with actual text
-    textVerify(locator,expectedtext){   
+    textVerify(locator, expectedtext){   
         cy.get(locator).then( (x)=>{
 
             let actualText = x.text()

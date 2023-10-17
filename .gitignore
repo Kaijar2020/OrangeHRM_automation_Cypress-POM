@@ -3,5 +3,6 @@
 #Ignore Folder and Files
 
 .png
+downloads
 node_modules
 cypress/screenshots

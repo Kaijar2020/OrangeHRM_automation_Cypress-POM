@@ -26,9 +26,11 @@ class ClaimPage{
     selectFromCurrencyDropdown(){
         cy.xpath(this.claimPageLocator.selectCurrency).click()
         cy.wait(1000)
+        // cy.get(':nth-child(9) > span').click()
         cy.get(':nth-child(9) > span').click()
     }
 
+    //Click ViewDetrails Claim
     clickViewDetails(){
         cy.xpath(this.claimPageLocator.viewDetails).click()
     }

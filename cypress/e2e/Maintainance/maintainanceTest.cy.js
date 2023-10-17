@@ -1,8 +1,12 @@
 import baseMethod from "../baseMethod"
 import MaintainancePage from "./maintainance.po"
+import LoginPage from "../Login/login.po"
+import loginData from '../../fixtures/loginData.json'
+
 
 const base = new baseMethod()
 const mntn = new MaintainancePage()
+const login = new LoginPage()
 
 
 describe('Automated Maintainance Module',()=>{
@@ -21,8 +25,18 @@ describe('Automated Maintainance Module',()=>{
 
     it('Automate Access Records',()=>{
       base.clickOnElement(mntn.maintainancePageLocator.maintainanceMenu)  
-      doWait(1000)
+      base.doWait(1000)
+      base.inputPassword(mntn.maintainancePageLocator.accessPassword, 'admin123')
+      base.doWait(1000)
+      base.clickOnElement(mntn.maintainancePageLocator.confirm_btn)
+      base.doWait(1000)
       base.clickOnElement(mntn.maintainancePageLocator.accessRecord)
-      doWait(1000)
+      base.doWait(1000)
+      mntn.selectBySuggestion()
+      base.doWait(1000)
+      base.clickOnElement(mntn.maintainancePageLocator.search_btn)
+      base.doWait(1000)
+      base.textVerify(mntn.maintainancePageLocator.employeeFullName, '')
+      base.doWait(1000)
     })
 })
