@@ -27,13 +27,16 @@ describe('Buzz Module Automation',()=>{
     })
 
     it.skip('Share Photo',()=>{
+        //need to fix this module
         base.clickOnElement(buzz.buzzPageLocator.buzzMenu)
         base.doWait(1000)
         base.clickOnElement(buzz.buzzPageLocator.share_photos)
+        buzz.sharePhoto() 
+        //base.clickOnElement(buzz.buzzPageLocator.share_photos)
         base.doWait(1000)
-        buzz.sharePhoto() //issue on the select file function
+        //buzz.sharePhoto() 
         base.doWait(1000)
-        cy.get('.oxd-form-actions > .oxd-button').click({force:true})
+        //cy.get('.oxd-form-actions > .oxd-button').click({force:true})
         buzz.toastMessageDisplay()
         base.doWait(1000)
     })
@@ -45,6 +48,19 @@ describe('Buzz Module Automation',()=>{
         buzz.reactHeart()
         base.doWait(1000)
         buzz.commentPost(loginData.comment)
+        base.doWait(1000)
+        buzz.toastMessageDisplay()
+        base.doWait(1000)
+    })
+    
+    it.only('Delete Post',()=>{
+        base.clickOnElement(buzz.buzzPageLocator.buzzMenu)
+        base.doWait(1000)
+        base.clickOnElement(buzz.buzzPageLocator.threeDot_btn)
+        base.doWait(1000)
+        base.clickOnElement(buzz.buzzPageLocator.deletePost)
+        base.doWait(1000)
+        base.clickOnElement(buzz.buzzPageLocator.yesDelete)
         base.doWait(1000)
         buzz.toastMessageDisplay()
         base.doWait(1000)

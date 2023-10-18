@@ -5,7 +5,8 @@ class BuzzPage{
         buzzMenu : "//ul[@class='oxd-main-menu']/li[12]/a",
         textareaStatus : "//textarea[@class='oxd-buzz-post-input']",
         submit_btn : "//button[@type='submit']",
-        share_photos : "(//button[@class='oxd-glass-button'])[1]",
+        //share_photos : "(//button[@class='oxd-glass-button'])[1]",
+        share_photos : "//button[contains(text(),' Share Photos')]",
         dropPhoto : "//div[@class='oxd-file-div oxd-file-div--active']",
         share_videos : "(//button[@class='oxd-glass-button'])[2]",
         reactLove : "orangehrm-like-animation",
@@ -33,7 +34,10 @@ class BuzzPage{
         cy.xpath(this.buzzPageLocator.comment_box).type(text).type('{enter}')
     }
     sharePhoto(){
-        cy.xpath(this.buzzPageLocator.dropPhoto).selectFile("cypress//downloads//download (4).jpeg", { action: 'drag-drop' })
+        cy.xpath(this.buzzPageLocator.dropPhoto).attachFile('download (4).jpeg', {action: 'drag-n-drop'})
+        
+        //cy.xpath("(//button[contains(text(),' Share ')])[1]").click({force:true}
+        cy.xpath("//div[@class='oxd-form-actions orangehrm-buzz-post-modal-actions']//button[1]").click()
     }
 
-}export default BuzzPage; 
+}export default BuzzPage;   

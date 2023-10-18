@@ -39,6 +39,7 @@ Cypress.Commands.add("login", (email, password) => {
 require('cypress-xpath');
 
 //File Upload
-//require('cypress-file-upload')
+//Run this command in terminal->> npm install --save-dev cypress-file-upload
+require('cypress-file-upload')
 
 
