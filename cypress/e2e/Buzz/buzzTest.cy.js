@@ -53,7 +53,7 @@ describe('Buzz Module Automation',()=>{
         base.doWait(1000)
     })
     
-    it.only('Delete Post',()=>{
+    it('Delete Post',()=>{
         base.clickOnElement(buzz.buzzPageLocator.buzzMenu)
         base.doWait(1000)
         base.clickOnElement(buzz.buzzPageLocator.threeDot_btn)
